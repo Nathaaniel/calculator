@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+        <style>
+            .display{
+                text-align: right;
+                background-color: rgba(124, 124, 124, 0.74);
+                font-family: 'VT323', monospace;
+                border-style: solid;
+                border-width: 1px;
+                width: 84%;
+                height: 14%;
+                margin: 8%;
+                font-size: 600%;
+                line-height: 100%;
+                
+            }
+            
+
+            .flex-container{
+                background-color: rgba(27, 25, 25, 0.945);
+                height: 700px;
+                width: 450px;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 35%;
+                border-radius:5%;
+                
+                
+            }
+
+            .number{
+                background-color: rgb(82, 80, 80);
+                width: 15%;
+                height: 10%;
+                margin-left: 8%;
+                border-radius: 10%;
+                color: white;
+                text-align: center;
+                font-size: 300%;
+                font-family: 'Helvetica';
+                line-height: 95%;
+                
+                
+            }
+
+            .operate{
+                background-color: rgb(48, 46, 46);
+                width: 15%;
+                height: 10%;
+                margin-left: 8%;
+                border-radius: 10%;
+                color: white;
+                text-align: center;
+                font-size: 300%;
+                font-family: 'Helvetica';
+                line-height: 95%;
+            }
+
+            .takeback{
+                background-color: rgba(0, 183, 255, 0.836);
+                width: 38%;
+                height: 10%;
+                margin-left: 8%;
+                border-radius: 5%;
+                color: black;
+                text-align: center;
+                font-size: 300%;
+                font-family: 'Helvetica';
+                line-height: 95%;
+            }
+
+            .arrow{
+                background-color: rgba(0, 183, 255, 0.836);
+                width: 38%;
+                height: 10%;
+                margin-left: 8%;
+                border-radius: 5%;
+                color: black;
+                text-align: center;
+                font-size: 600%;
+                font-family: 'VT323', monospace;
+                line-height:0%;
+            }
+
+            
+
+
+        </style>
+    </head>
+    <body>
+
+        <title> Calculator </title>
+        <h1>The Calculator</h1>
+
+        <div class="flex-container" id="flex-container">
+            <div class="display" id="display">
+                0
+            </div>
+
+            <button onclick="onScreen = back(onScreen)" class="arrow" id="back">
+                ←  
+            </button>
+
+            <button onclick="onScreen = wipe(); firstNumber=''" class="takeback" id="reset">
+                CE
+            </button>
+
+            
+            <button onclick="onScreen = input(onScreen, id)" class="number" id="7">
+                7
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="8">
+                8
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="9">
+                9
+            </button>
+
+            <button onclick="firstNumber = store(operation, firstNumber, onScreen) ; onScreen='' ; operation='div'" class="operate" id="buttonide">
+                ÷
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="4">
+                4
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="5">
+                5
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="6">
+                6
+            </button>
+
+            <button onclick="firstNumber = store(operation, firstNumber, onScreen) ; onScreen='' ; operation='mul'" class="operate" id="times">
+                ×
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="1">
+                1
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="2">
+                2
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="3">
+                3
+            </button>
+
+            <button onclick="firstNumber = store(operation, firstNumber, onScreen) ; onScreen='' ; operation='sub'" class="operate" id="subtract">
+                -
+            </button>
+
+            <button onclick="onScreen = input(onScreen, id)"  class="number" id="0">
+                0
+            </button>
+
+            <button onclick="onScreen = dot(onScreen)" class="number" id="dot">
+                ⋅
+            </button>
+
+            <button onclick="onScreen = equals(operation, firstNumber, onScreen)" class="operate" id="equals">
+                =
+            </button>
+
+            <button onclick="firstNumber = store(operation, firstNumber, onScreen) ; onScreen='' ; operation='add'" class="operate" id="plus">
+                +
+            </button>
+            
+
+        </div>
+    </body>
+    <script src="java.js">
+    </script>
+</html>
